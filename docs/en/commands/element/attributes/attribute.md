@@ -1,41 +1,45 @@
-# Get Element Text
+# Get Element Attribute
 
-Returns visible text for element
+Get the value of an element's attribute
 ## Example Usage
 
 ```java
 // Java
-MobileElement element = (MobileElement) driver.findElementByClassName("SomeClassName");
-let elText = element.getText();
+List<MobileElement> element = (MobileElement) driver.findElementByAccessibilityId("SomeAccessibilityID");
+String tagName = element.getAttribute("content-desc");
 
 ```
+
 ```python
 # Python
-# el = self.driver.find_element_by_accessibility_id('SomeId')
-# TODO: Python example
+tagName = self.driver.find_element_by_accessibility_id('SomeAccessibilityID').get_attribute('content-desc')
 
 ```
+
 ```javascript
 // Javascript
 // webdriver.io example
-driver.getText("~SomeAccessibilityId");
+let attribute = driver.getAttribute("~SomeAccessibilityId", "content-desc");
 
 
 // wd example
 let element = await driver.elementByAccessibilityId("SomeAccessibilityID");
-await element.submit();
+let tagName = await element.getAttribute("content-desc");
 
 ```
+
 ```ruby
 # Ruby
-# TODO Ruby sample
+@driver.find_element(:accessibility_id, 'SomeAccessibilityID').attribute("content-desc")
 
 ```
+
 ```php
 # PHP
 // TODO PHP sample
 
 ```
+
 ```csharp
 // C#
 // TODO C# sample
@@ -43,20 +47,16 @@ await element.submit();
 ```
 
 
-## Description
-
-Returns the visible text for the element.
-
 
 ## Client Docs
 
-* [Java](https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/WebElement.html#getText--)
-* [Python](http://selenium-python.readthedocs.io/api.html)
-* [Javascript (WebdriverIO)](http://webdriver.io/api/property/getText.html)
-* [Javascript (WD)](https://github.com/admc/wd/blob/master/lib/commands.js#L1832)
-* [Ruby](http://www.rubydoc.info/gems/selenium-webdriver/Selenium/WebDriver/)
-* [PHP](https://github.com/appium/php-client/)
-* [C#](https://github.com/appium/appium-dotnet-driver/)
+ * [Java](https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/WebElement.html#getAttribute) 
+ * [Python](http://selenium-python.readthedocs.io/api.html#selenium.webdriver.remote.webelement.WebElement.get_attribute) 
+ * [Javascript (WebdriverIO)](http://webdriver.io/api/property/getAttribute.html) 
+ * [Javascript (WD)](https://github.com/admc/wd/blob/master/lib/commands.js#L1350) 
+ * [Ruby](http://www.rubydoc.info/gems/selenium-webdriver/Selenium%2FWebDriver%2FElement:attribute) 
+ * [PHP](https://github.com/appium/php-client/) 
+ * [C#](https://github.com/appium/appium-dotnet-driver/) 
 
 ## Support
 
@@ -87,14 +87,15 @@ Returns the visible text for the element.
 
 ### Endpoint
 
-`GET /wd/hub/session/:session_id/element/:element_id/text`
+`GET /wd/hub/session/:session_id/elements/:element_id/attribute/:name`
 
 ### URL Parameters
 
 |name|description|
 |----|-----------|
 |session_id|ID of the session to route the command to|
-|element_id|ID of the element to get the text from|
+|element_id|ID of the element to get the attribute from|
+|name|The name of the attribute|
 
 ### JSON Parameters
 
@@ -102,9 +103,9 @@ None
 
 ### Response
 
-null
+The value of the attribute or null if not set (string)
 
 ## See Also
 
-* [W3C Specification](https://www.w3.org/TR/webdriver/#dfn-get-element-text)
-* [JSONWP Specification](https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol#sessionsessionidelementidtext)
+* [W3C Specification](https://www.w3.org/TR/webdriver/#dfn-get-element-attribute)
+* [JSONWP Specification](https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol#sessionsessionidelementidattributename)

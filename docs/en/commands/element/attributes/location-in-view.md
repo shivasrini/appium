@@ -1,62 +1,51 @@
-# Get Element Text
+# Get Element Location in View
 
-Returns visible text for element
+Determine an element's location on the screen once it has been scrolled into view (mainly an internal command and not supported by all clients)
 ## Example Usage
 
 ```java
-// Java
-MobileElement element = (MobileElement) driver.findElementByClassName("SomeClassName");
-let elText = element.getText();
-
+// Not supported
 ```
+
 ```python
-# Python
-# el = self.driver.find_element_by_accessibility_id('SomeId')
-# TODO: Python example
-
+# Not supported
 ```
+
 ```javascript
 // Javascript
 // webdriver.io example
-driver.getText("~SomeAccessibilityId");
+let location = driver.getLocationInView("~SomeAccessibilityId");
 
 
 // wd example
 let element = await driver.elementByAccessibilityId("SomeAccessibilityID");
-await element.submit();
+let location = await element.getLocationInView();
 
 ```
+
 ```ruby
-# Ruby
-# TODO Ruby sample
-
+# Not supported
 ```
+
 ```php
-# PHP
-// TODO PHP sample
-
+// Not supported
 ```
+
 ```csharp
-// C#
-// TODO C# sample
-
+// Not supported
 ```
 
-
-## Description
-
-Returns the visible text for the element.
 
 
 ## Client Docs
 
-* [Java](https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/WebElement.html#getText--)
-* [Python](http://selenium-python.readthedocs.io/api.html)
-* [Javascript (WebdriverIO)](http://webdriver.io/api/property/getText.html)
-* [Javascript (WD)](https://github.com/admc/wd/blob/master/lib/commands.js#L1832)
-* [Ruby](http://www.rubydoc.info/gems/selenium-webdriver/Selenium/WebDriver/)
-* [PHP](https://github.com/appium/php-client/)
-* [C#](https://github.com/appium/appium-dotnet-driver/)
+
+
+ * [Javascript (WebdriverIO)](http://webdriver.io/api/property/getLocationInView.html) 
+ * [Javascript (WD)](https://github.com/admc/wd/blob/master/lib/commands.js#L2189) 
+
+
+
 
 ## Support
 
@@ -87,14 +76,14 @@ Returns the visible text for the element.
 
 ### Endpoint
 
-`GET /wd/hub/session/:session_id/element/:element_id/text`
+`GET /wd/hub/session/:session_id/elements/:element_id/location_in_view`
 
 ### URL Parameters
 
 |name|description|
 |----|-----------|
 |session_id|ID of the session to route the command to|
-|element_id|ID of the element to get the text from|
+|element_id|ID of the element to get the location-in-view of|
 
 ### JSON Parameters
 
@@ -102,9 +91,11 @@ None
 
 ### Response
 
-null
+|name|type|description|
+|----|----|-----------|
+| x | number | X coordinate |
+| y | number | Y coordinate |
 
 ## See Also
 
-* [W3C Specification](https://www.w3.org/TR/webdriver/#dfn-get-element-text)
-* [JSONWP Specification](https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol#sessionsessionidelementidtext)
+* [JSONWP Specification](https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol#sessionsessionidelementidlocation_in_view)

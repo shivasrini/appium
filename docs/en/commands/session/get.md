@@ -1,41 +1,44 @@
-# Get Element Text
+# Get Session Capabilities
 
-Returns visible text for element
+Retrieve the capabilities of the specified
 ## Example Usage
 
 ```java
 // Java
-MobileElement element = (MobileElement) driver.findElementByClassName("SomeClassName");
-let elText = element.getText();
+DriverSessions driverSessions = new DriverSessions();
+Session session = driverSessions.get("c8db88a0-47a6-47a1-802d-164d746c06aa");
 
 ```
+
 ```python
 # Python
-# el = self.driver.find_element_by_accessibility_id('SomeId')
-# TODO: Python example
+desired_caps = self.driver.desired_capabilities()
 
 ```
+
 ```javascript
 // Javascript
 // webdriver.io example
-driver.getText("~SomeAccessibilityId");
+let caps = driver.session('c8db88a0-47a6-47a1-802d-164d746c06aa');
 
 
 // wd example
-let element = await driver.elementByAccessibilityId("SomeAccessibilityID");
-await element.submit();
+let caps = await driver.sessionCapabilities('c8db88a0-47a6-47a1-802d-164d746c06aa');
 
 ```
+
 ```ruby
 # Ruby
-# TODO Ruby sample
+# Private method. Do not use.
 
 ```
+
 ```php
 # PHP
 // TODO PHP sample
 
 ```
+
 ```csharp
 // C#
 // TODO C# sample
@@ -43,20 +46,16 @@ await element.submit();
 ```
 
 
-## Description
-
-Returns the visible text for the element.
-
 
 ## Client Docs
 
-* [Java](https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/WebElement.html#getText--)
-* [Python](http://selenium-python.readthedocs.io/api.html)
-* [Javascript (WebdriverIO)](http://webdriver.io/api/property/getText.html)
-* [Javascript (WD)](https://github.com/admc/wd/blob/master/lib/commands.js#L1832)
-* [Ruby](http://www.rubydoc.info/gems/selenium-webdriver/Selenium/WebDriver/)
-* [PHP](https://github.com/appium/php-client/)
-* [C#](https://github.com/appium/appium-dotnet-driver/)
+ * [Java](https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/remote/server/DefaultDriverSessions.html#get-org.openqa.selenium.remote.SessionId-) 
+ * [Python](http://selenium-python.readthedocs.io/api.html#selenium.webdriver.remote.webdriver.WebDriver.desired_capabilities) 
+ * [Javascript (WebdriverIO)](http://webdriver.io/api/protocol/session.html) 
+ * [Javascript (WD)](https://github.com/admc/wd/blob/master/lib/commands.js#L227) 
+ * [Ruby](http://www.rubydoc.info/gems/selenium-webdriver/Selenium%2FWebDriver%2FRemote%2FOSS%2FBridge:session_capabilities) 
+ * [PHP](https://github.com/appium/php-client/) 
+ * [C#](https://github.com/appium/appium-dotnet-driver/) 
 
 ## Support
 
@@ -87,14 +86,13 @@ Returns the visible text for the element.
 
 ### Endpoint
 
-`GET /wd/hub/session/:session_id/element/:element_id/text`
+`GET /session/:session_id`
 
 ### URL Parameters
 
 |name|description|
 |----|-----------|
 |session_id|ID of the session to route the command to|
-|element_id|ID of the element to get the text from|
 
 ### JSON Parameters
 
@@ -102,9 +100,8 @@ None
 
 ### Response
 
-null
+An object describing the session's capabilities (object)
 
 ## See Also
 
-* [W3C Specification](https://www.w3.org/TR/webdriver/#dfn-get-element-text)
-* [JSONWP Specification](https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol#sessionsessionidelementidtext)
+* [JSONWP Specification](https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol#sessionsessionid)

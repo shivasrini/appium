@@ -1,41 +1,45 @@
-# Get Element Text
+# Is Element Selected
 
-Returns visible text for element
+Determine if a form or form-like element (checkbox, select, etc...) is selected
 ## Example Usage
 
 ```java
 // Java
-MobileElement element = (MobileElement) driver.findElementByClassName("SomeClassName");
-let elText = element.getText();
+MobileElement element = (MobileElement) driver.findElementByAccessibilityId("SomeAccessibilityID");
+boolean isSelected = element.isSelected();
 
 ```
+
 ```python
 # Python
-# el = self.driver.find_element_by_accessibility_id('SomeId')
-# TODO: Python example
+self.driver.find_element_by_accessibility_id('SomeAccessibilityID').is_selected()
 
 ```
+
 ```javascript
 // Javascript
 // webdriver.io example
-driver.getText("~SomeAccessibilityId");
+let isSelected = driver.isSelected("~SomeAccessibilityId");
 
 
 // wd example
 let element = await driver.elementByAccessibilityId("SomeAccessibilityID");
-await element.submit();
+let isSelected = await element.isSelected();
 
 ```
+
 ```ruby
 # Ruby
-# TODO Ruby sample
+@driver.find_element(:accessibility_id, "SomeAccessibilityID").selected?()
 
 ```
+
 ```php
 # PHP
 // TODO PHP sample
 
 ```
+
 ```csharp
 // C#
 // TODO C# sample
@@ -43,20 +47,16 @@ await element.submit();
 ```
 
 
-## Description
-
-Returns the visible text for the element.
-
 
 ## Client Docs
 
-* [Java](https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/WebElement.html#getText--)
-* [Python](http://selenium-python.readthedocs.io/api.html)
-* [Javascript (WebdriverIO)](http://webdriver.io/api/property/getText.html)
-* [Javascript (WD)](https://github.com/admc/wd/blob/master/lib/commands.js#L1832)
-* [Ruby](http://www.rubydoc.info/gems/selenium-webdriver/Selenium/WebDriver/)
-* [PHP](https://github.com/appium/php-client/)
-* [C#](https://github.com/appium/appium-dotnet-driver/)
+ * [Java](https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/WebElement.html#isSelected--) 
+ * [Python](http://selenium-python.readthedocs.io/api.html#selenium.webdriver.remote.webelement.WebElement.is_selected) 
+ * [Javascript (WebdriverIO)](http://webdriver.io/api/state/isSelected.html) 
+ * [Javascript (WD)](https://github.com/admc/wd/blob/master/lib/commands.js#L1402) 
+ * [Ruby](http://www.rubydoc.info/gems/selenium-webdriver/Selenium/WebDriver/Element#selected%3F-instance_method) 
+ * [PHP](https://github.com/appium/php-client/) 
+ * [C#](https://github.com/appium/appium-dotnet-driver/) 
 
 ## Support
 
@@ -87,14 +87,14 @@ Returns the visible text for the element.
 
 ### Endpoint
 
-`GET /wd/hub/session/:session_id/element/:element_id/text`
+`GET /wd/hub/session/:session_id/element/:element_id/selected`
 
 ### URL Parameters
 
 |name|description|
 |----|-----------|
 |session_id|ID of the session to route the command to|
-|element_id|ID of the element to get the text from|
+|element_id|ID of the element to check if it is selected|
 
 ### JSON Parameters
 
@@ -102,9 +102,9 @@ None
 
 ### Response
 
-null
+Whether the element is selected (boolean)
 
 ## See Also
 
-* [W3C Specification](https://www.w3.org/TR/webdriver/#dfn-get-element-text)
-* [JSONWP Specification](https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol#sessionsessionidelementidtext)
+* [W3C Specification](https://www.w3.org/TR/webdriver/#dfn-is-element-selected)
+* [JSONWP Specification](https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol#sessionsessionidelementidselected)

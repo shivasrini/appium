@@ -1,41 +1,45 @@
-# Get Element Text
+# Get Element Size
 
-Returns visible text for element
+Determine an element's size in pixels
 ## Example Usage
 
 ```java
 // Java
-MobileElement element = (MobileElement) driver.findElementByClassName("SomeClassName");
-let elText = element.getText();
+List<MobileElement> element = (MobileElement) driver.findElementByAccessibilityId("SomeAccessibilityID");
+Dimension elementSize = element.getSize();
 
 ```
+
 ```python
 # Python
-# el = self.driver.find_element_by_accessibility_id('SomeId')
-# TODO: Python example
+size = self.driver.find_element_by_accessibility_id('SomeAccessibilityID').size
 
 ```
+
 ```javascript
 // Javascript
 // webdriver.io example
-driver.getText("~SomeAccessibilityId");
+let size = driver.getElementSize("~SomeAccessibilityId");
 
 
 // wd example
 let element = await driver.elementByAccessibilityId("SomeAccessibilityID");
-await element.submit();
+let size = await element.getSize();
 
 ```
+
 ```ruby
 # Ruby
-# TODO Ruby sample
+@driver.find_element(:accessibility_id, 'SomeAccessibilityID').size
 
 ```
+
 ```php
 # PHP
 // TODO PHP sample
 
 ```
+
 ```csharp
 // C#
 // TODO C# sample
@@ -45,18 +49,17 @@ await element.submit();
 
 ## Description
 
-Returns the visible text for the element.
-
+The size will be returned as an object with width and height properties.
 
 ## Client Docs
 
-* [Java](https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/WebElement.html#getText--)
-* [Python](http://selenium-python.readthedocs.io/api.html)
-* [Javascript (WebdriverIO)](http://webdriver.io/api/property/getText.html)
-* [Javascript (WD)](https://github.com/admc/wd/blob/master/lib/commands.js#L1832)
-* [Ruby](http://www.rubydoc.info/gems/selenium-webdriver/Selenium/WebDriver/)
-* [PHP](https://github.com/appium/php-client/)
-* [C#](https://github.com/appium/appium-dotnet-driver/)
+ * [Java](https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/WebElement.html#getSize--) 
+ * [Python](http://selenium-python.readthedocs.io/api.html#selenium.webdriver.remote.webelement.WebElement.size) 
+ * [Javascript (WebdriverIO)](http://webdriver.io/api/property/getElementSize.html) 
+ * [Javascript (WD)](https://github.com/admc/wd/blob/master/lib/commands.js#L2203) 
+ * [Ruby](http://www.rubydoc.info/gems/selenium-webdriver/Selenium/WebDriver/Element:size) 
+ * [PHP](https://github.com/appium/php-client/) 
+ * [C#](https://github.com/appium/appium-dotnet-driver/) 
 
 ## Support
 
@@ -87,14 +90,14 @@ Returns the visible text for the element.
 
 ### Endpoint
 
-`GET /wd/hub/session/:session_id/element/:element_id/text`
+`GET /wd/hub/session/:session_id/elements/:element_id/size`
 
 ### URL Parameters
 
 |name|description|
 |----|-----------|
 |session_id|ID of the session to route the command to|
-|element_id|ID of the element to get the text from|
+|element_id|ID of the element to get the size of|
 
 ### JSON Parameters
 
@@ -102,9 +105,11 @@ None
 
 ### Response
 
-null
+|name|type|description|
+|----|----|-----------|
+| width | number | Width of the element |
+| height | number | Height of the element |
 
 ## See Also
 
-* [W3C Specification](https://www.w3.org/TR/webdriver/#dfn-get-element-text)
-* [JSONWP Specification](https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol#sessionsessionidelementidtext)
+* [JSONWP Specification](https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol#sessionsessionidelementidsize)

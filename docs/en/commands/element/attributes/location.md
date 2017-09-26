@@ -1,41 +1,45 @@
-# Get Element Text
+# Get Element Location
 
-Returns visible text for element
+Determine an element's location on the page or screen
 ## Example Usage
 
 ```java
 // Java
-MobileElement element = (MobileElement) driver.findElementByClassName("SomeClassName");
-let elText = element.getText();
+List<MobileElement> element = (MobileElement) driver.findElementByAccessibilityId("SomeAccessibilityID");
+Point location = element.getLocation();
 
 ```
+
 ```python
 # Python
-# el = self.driver.find_element_by_accessibility_id('SomeId')
-# TODO: Python example
+location = self.driver.find_element_by_accessibility_id('SomeAccessibilityID').location
 
 ```
+
 ```javascript
 // Javascript
 // webdriver.io example
-driver.getText("~SomeAccessibilityId");
+let location = driver.getLocation("~SomeAccessibilityId");
 
 
 // wd example
 let element = await driver.elementByAccessibilityId("SomeAccessibilityID");
-await element.submit();
+let location = await element.getLocation();
 
 ```
+
 ```ruby
 # Ruby
-# TODO Ruby sample
+@driver.find_element(:accessibility_id, 'SomeAccessibilityID').location
 
 ```
+
 ```php
 # PHP
 // TODO PHP sample
 
 ```
+
 ```csharp
 // C#
 // TODO C# sample
@@ -45,18 +49,17 @@ await element.submit();
 
 ## Description
 
-Returns the visible text for the element.
-
+The point (0, 0) refers to the upper-left corner of the page. The element's coordinates are returned as a JSON object with x and y properties
 
 ## Client Docs
 
-* [Java](https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/WebElement.html#getText--)
-* [Python](http://selenium-python.readthedocs.io/api.html)
-* [Javascript (WebdriverIO)](http://webdriver.io/api/property/getText.html)
-* [Javascript (WD)](https://github.com/admc/wd/blob/master/lib/commands.js#L1832)
-* [Ruby](http://www.rubydoc.info/gems/selenium-webdriver/Selenium/WebDriver/)
-* [PHP](https://github.com/appium/php-client/)
-* [C#](https://github.com/appium/appium-dotnet-driver/)
+ * [Java](https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/WebElement.html#getLocation--) 
+ * [Python](http://selenium-python.readthedocs.io/api.html#selenium.webdriver.remote.webelement.WebElement.location) 
+ * [Javascript (WebdriverIO)](http://webdriver.io/api/property/getLocation.html) 
+ * [Javascript (WD)](https://github.com/admc/wd/blob/master/lib/commands.js#L2175) 
+ * [Ruby](http://www.rubydoc.info/gems/selenium-webdriver/Selenium/WebDriver/Element:location) 
+ * [PHP](https://github.com/appium/php-client/) 
+ * [C#](https://github.com/appium/appium-dotnet-driver/) 
 
 ## Support
 
@@ -87,14 +90,14 @@ Returns the visible text for the element.
 
 ### Endpoint
 
-`GET /wd/hub/session/:session_id/element/:element_id/text`
+`GET /wd/hub/session/:session_id/elements/:element_id/location`
 
 ### URL Parameters
 
 |name|description|
 |----|-----------|
 |session_id|ID of the session to route the command to|
-|element_id|ID of the element to get the text from|
+|element_id|ID of the element to get the location of|
 
 ### JSON Parameters
 
@@ -102,9 +105,11 @@ None
 
 ### Response
 
-null
+|name|type|description|
+|----|----|-----------|
+| x | number | X coordinate |
+| y | number | Y coordinate |
 
 ## See Also
 
-* [W3C Specification](https://www.w3.org/TR/webdriver/#dfn-get-element-text)
-* [JSONWP Specification](https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol#sessionsessionidelementidtext)
+* [JSONWP Specification](https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol#sessionsessionidelementidlocation)
