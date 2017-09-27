@@ -1,41 +1,46 @@
-# Find Element
+# Get Element Location
 
-Search for an element
+Determine an element's location on the page or screen
 ## Example Usage
 
 ```java
 // Java
-MobileElement elementOne = (MobileElement) driver.findElementByAccessibilityId("SomeAccessibilityID");
-MobileElement elementTwo = (MobileElement) driver.findElementByClassName("SomeClassName");
+List<MobileElement> element = (MobileElement) driver.findElementByAccessibilityId("SomeAccessibilityID");
+Point location = element.getLocation();
 
 ```
+
 ```python
 # Python
-el = self.driver.find_element_by_accessibility_id('SomeAccessibilityID')
+location = self.driver.find_element_by_accessibility_id('SomeAccessibilityID').location
 
 ```
+
 ```javascript
 // Javascript
 // webdriver.io example
-driver.element("~SomeAccessibilityId");
+let location = driver.getLocation("~SomeAccessibilityId");
 
 
 
 // wd example
-let elementOne = await driver.elementByAccessibilityId("SomeAccessibilityID");
-let elementTwo = await driver.element("id", "SomeID");
+let element = await driver.elementByAccessibilityId("SomeAccessibilityID");
+let location = await element.getLocation();
 
 ```
+
 ```ruby
 # Ruby
-@driver.find_element(:accessibility_id, 'SomeAccessibilityID')
+@driver.find_element(:accessibility_id, 'SomeAccessibilityID').location
 
 ```
+
 ```php
 # PHP
 // TODO PHP sample
 
 ```
+
 ```csharp
 // C#
 // TODO C# sample
@@ -45,18 +50,17 @@ let elementTwo = await driver.element("id", "SomeID");
 
 ## Description
 
-The locator strategy returns the first element it finds. #TODO: Let's make a document with the locator strategies that this links to
-
+The point (0, 0) refers to the upper-left corner of the page. The element's coordinates are returned as a JSON object with x and y properties
 
 ## Client Docs
 
-* [Java](https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/WebElement.html#findElement-org.openqa.selenium.By-)
-* [Python](http://selenium-python.readthedocs.io/api.html#selenium.webdriver.remote.webdriver.WebDriver.find_element)
-* [Javascript (WebdriverIO)](http://webdriver.io/api/protocol/element.html#Usage)
-* [Javascript (WD)](https://github.com/admc/wd/blob/master/lib/commands.js#L745)
-* [Ruby](http://www.rubydoc.info/gems/selenium-webdriver/Selenium/WebDriver/)
-* [PHP](https://github.com/appium/php-client/)
-* [C#](https://github.com/appium/appium-dotnet-driver/)
+ * [Java](https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/WebElement.html#getLocation--) 
+ * [Python](http://selenium-python.readthedocs.io/api.html#selenium.webdriver.remote.webelement.WebElement.location) 
+ * [Javascript (WebdriverIO)](http://webdriver.io/api/property/getLocation.html) 
+ * [Javascript (WD)](https://github.com/admc/wd/blob/master/lib/commands.js#L2175) 
+ * [Ruby](http://www.rubydoc.info/gems/selenium-webdriver/Selenium/WebDriver/Element:location) 
+ * [PHP](https://github.com/appium/php-client/) 
+ * [C#](https://github.com/appium/appium-dotnet-driver/) 
 
 ## Support
 
@@ -87,26 +91,26 @@ The locator strategy returns the first element it finds. #TODO: Let's make a doc
 
 ### Endpoint
 
-`POST /wd/hub/session/:session_id/element`
+`GET /wd/hub/session/:session_id/elements/:element_id/location`
 
 ### URL Parameters
 
 |name|description|
 |----|-----------|
 |session_id|ID of the session to route the command to|
+|element_id|ID of the element to get the location of|
 
 ### JSON Parameters
 
-|name|type|description|
-|----|-----------|
-| using | string | The locator strategy to use |
-| value | string | The search target |
+None
 
 ### Response
 
-null
+|name|type|description|
+|----|----|-----------|
+| x | number | X coordinate |
+| y | number | Y coordinate |
 
 ## See Also
 
-* [W3C Specification](https://www.w3.org/TR/webdriver/#find-element)
-* [JSONWP Specification](https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol#sessionsessionidelement)
+* [JSONWP Specification](https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol#sessionsessionidelementidlocation)

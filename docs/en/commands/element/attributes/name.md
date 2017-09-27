@@ -1,41 +1,46 @@
-# Find Element
+# Get Tag Name
 
-Search for an element
+Get an element's tag name
 ## Example Usage
 
 ```java
 // Java
-MobileElement elementOne = (MobileElement) driver.findElementByAccessibilityId("SomeAccessibilityID");
-MobileElement elementTwo = (MobileElement) driver.findElementByClassName("SomeClassName");
+List<MobileElement> element = (MobileElement) driver.findElementByAccessibilityId("SomeAccessibilityID");
+String tagName = element.getTagName();
 
 ```
+
 ```python
 # Python
-el = self.driver.find_element_by_accessibility_id('SomeAccessibilityID')
+tagName = self.driver.find_element_by_accessibility_id('SomeAccessibilityID').tag_name
 
 ```
+
 ```javascript
 // Javascript
 // webdriver.io example
-driver.element("~SomeAccessibilityId");
+let tagName = driver.getTagName("~SomeAccessibilityId");
 
 
 
 // wd example
-let elementOne = await driver.elementByAccessibilityId("SomeAccessibilityID");
-let elementTwo = await driver.element("id", "SomeID");
+let element = await driver.elementByAccessibilityId("SomeAccessibilityID");
+let tagName = await element.getTagName();
 
 ```
+
 ```ruby
 # Ruby
-@driver.find_element(:accessibility_id, 'SomeAccessibilityID')
+@driver.find_element(:accessibility_id, 'SomeAccessibilityID').tag_name
 
 ```
+
 ```php
 # PHP
 // TODO PHP sample
 
 ```
+
 ```csharp
 // C#
 // TODO C# sample
@@ -43,20 +48,16 @@ let elementTwo = await driver.element("id", "SomeID");
 ```
 
 
-## Description
-
-The locator strategy returns the first element it finds. #TODO: Let's make a document with the locator strategies that this links to
-
 
 ## Client Docs
 
-* [Java](https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/WebElement.html#findElement-org.openqa.selenium.By-)
-* [Python](http://selenium-python.readthedocs.io/api.html#selenium.webdriver.remote.webdriver.WebDriver.find_element)
-* [Javascript (WebdriverIO)](http://webdriver.io/api/protocol/element.html#Usage)
-* [Javascript (WD)](https://github.com/admc/wd/blob/master/lib/commands.js#L745)
-* [Ruby](http://www.rubydoc.info/gems/selenium-webdriver/Selenium/WebDriver/)
-* [PHP](https://github.com/appium/php-client/)
-* [C#](https://github.com/appium/appium-dotnet-driver/)
+ * [Java](https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/WebElement.html#getTagName--) 
+ * [Python](http://selenium-python.readthedocs.io/api.html#selenium.webdriver.remote.webelement.WebElement.tag_name) 
+ * [Javascript (WebdriverIO)](http://webdriver.io/api/property/getTagName.html) 
+ * [Javascript (WD)](https://github.com/admc/wd/blob/master/lib/commands.js#L1336) 
+ * [Ruby](http://www.rubydoc.info/gems/selenium-webdriver/Selenium/WebDriver/Element#tag_name-instance_method) 
+ * [PHP](https://github.com/appium/php-client/) 
+ * [C#](https://github.com/appium/appium-dotnet-driver/) 
 
 ## Support
 
@@ -87,26 +88,24 @@ The locator strategy returns the first element it finds. #TODO: Let's make a doc
 
 ### Endpoint
 
-`POST /wd/hub/session/:session_id/element`
+`GET /wd/hub/session/:session_id/elements/:element_id/name`
 
 ### URL Parameters
 
 |name|description|
 |----|-----------|
 |session_id|ID of the session to route the command to|
+|element_id|ID of the element to get the name from|
 
 ### JSON Parameters
 
-|name|type|description|
-|----|-----------|
-| using | string | The locator strategy to use |
-| value | string | The search target |
+None
 
 ### Response
 
-null
+The tag name of the element (string)
 
 ## See Also
 
-* [W3C Specification](https://www.w3.org/TR/webdriver/#find-element)
-* [JSONWP Specification](https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol#sessionsessionidelement)
+* [W3C Specification](https://www.w3.org/TR/webdriver/#dfn-get-element-tag-name)
+* [JSONWP Specification](https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol#sessionsessionidelementidname)

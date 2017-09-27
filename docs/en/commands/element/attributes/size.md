@@ -1,41 +1,46 @@
-# Find Element
+# Get Element Size
 
-Search for an element
+Determine an element's size in pixels
 ## Example Usage
 
 ```java
 // Java
-MobileElement elementOne = (MobileElement) driver.findElementByAccessibilityId("SomeAccessibilityID");
-MobileElement elementTwo = (MobileElement) driver.findElementByClassName("SomeClassName");
+List<MobileElement> element = (MobileElement) driver.findElementByAccessibilityId("SomeAccessibilityID");
+Dimension elementSize = element.getSize();
 
 ```
+
 ```python
 # Python
-el = self.driver.find_element_by_accessibility_id('SomeAccessibilityID')
+size = self.driver.find_element_by_accessibility_id('SomeAccessibilityID').size
 
 ```
+
 ```javascript
 // Javascript
 // webdriver.io example
-driver.element("~SomeAccessibilityId");
+let size = driver.getElementSize("~SomeAccessibilityId");
 
 
 
 // wd example
-let elementOne = await driver.elementByAccessibilityId("SomeAccessibilityID");
-let elementTwo = await driver.element("id", "SomeID");
+let element = await driver.elementByAccessibilityId("SomeAccessibilityID");
+let size = await element.getSize();
 
 ```
+
 ```ruby
 # Ruby
-@driver.find_element(:accessibility_id, 'SomeAccessibilityID')
+@driver.find_element(:accessibility_id, 'SomeAccessibilityID').size
 
 ```
+
 ```php
 # PHP
 // TODO PHP sample
 
 ```
+
 ```csharp
 // C#
 // TODO C# sample
@@ -45,18 +50,17 @@ let elementTwo = await driver.element("id", "SomeID");
 
 ## Description
 
-The locator strategy returns the first element it finds. #TODO: Let's make a document with the locator strategies that this links to
-
+The size will be returned as an object with width and height properties.
 
 ## Client Docs
 
-* [Java](https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/WebElement.html#findElement-org.openqa.selenium.By-)
-* [Python](http://selenium-python.readthedocs.io/api.html#selenium.webdriver.remote.webdriver.WebDriver.find_element)
-* [Javascript (WebdriverIO)](http://webdriver.io/api/protocol/element.html#Usage)
-* [Javascript (WD)](https://github.com/admc/wd/blob/master/lib/commands.js#L745)
-* [Ruby](http://www.rubydoc.info/gems/selenium-webdriver/Selenium/WebDriver/)
-* [PHP](https://github.com/appium/php-client/)
-* [C#](https://github.com/appium/appium-dotnet-driver/)
+ * [Java](https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/WebElement.html#getSize--) 
+ * [Python](http://selenium-python.readthedocs.io/api.html#selenium.webdriver.remote.webelement.WebElement.size) 
+ * [Javascript (WebdriverIO)](http://webdriver.io/api/property/getElementSize.html) 
+ * [Javascript (WD)](https://github.com/admc/wd/blob/master/lib/commands.js#L2203) 
+ * [Ruby](http://www.rubydoc.info/gems/selenium-webdriver/Selenium/WebDriver/Element:size) 
+ * [PHP](https://github.com/appium/php-client/) 
+ * [C#](https://github.com/appium/appium-dotnet-driver/) 
 
 ## Support
 
@@ -87,26 +91,26 @@ The locator strategy returns the first element it finds. #TODO: Let's make a doc
 
 ### Endpoint
 
-`POST /wd/hub/session/:session_id/element`
+`GET /wd/hub/session/:session_id/elements/:element_id/size`
 
 ### URL Parameters
 
 |name|description|
 |----|-----------|
 |session_id|ID of the session to route the command to|
+|element_id|ID of the element to get the size of|
 
 ### JSON Parameters
 
-|name|type|description|
-|----|-----------|
-| using | string | The locator strategy to use |
-| value | string | The search target |
+None
 
 ### Response
 
-null
+|name|type|description|
+|----|----|-----------|
+| width | number | Width of the element |
+| height | number | Height of the element |
 
 ## See Also
 
-* [W3C Specification](https://www.w3.org/TR/webdriver/#find-element)
-* [JSONWP Specification](https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol#sessionsessionidelement)
+* [JSONWP Specification](https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol#sessionsessionidelementidsize)

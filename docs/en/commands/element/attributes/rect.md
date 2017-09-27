@@ -1,42 +1,42 @@
-# Get Element Text
+# Get Element Rect
 
-Returns visible text for element
+Gets dimensions and coordinates of an element
 ## Example Usage
 
 ```java
 // Java
-MobileElement element = (MobileElement) driver.findElementByClassName("SomeClassName");
-let elText = element.getText();
+List<MobileElement> element = (MobileElement) driver.findElementByAccessibilityId("SomeAccessibilityID");
+Rectangle rect = element.getRect();
 
 ```
+
 ```python
-# Python
-# el = self.driver.find_element_by_accessibility_id('SomeId')
-# TODO: Python example
-
+# Not supported
 ```
+
 ```javascript
 // Javascript
 // webdriver.io example
-driver.getText("~SomeAccessibilityId");
+let rect = driver.elementIdRect("~SomeAccessibilityId");
 
 
 
 // wd example
 let element = await driver.elementByAccessibilityId("SomeAccessibilityID");
-await element.submit();
+let rect = await element.getRect();
 
 ```
+
 ```ruby
-# Ruby
-# TODO Ruby sample
-
+# Not supported
 ```
+
 ```php
 # PHP
 // TODO PHP sample
 
 ```
+
 ```csharp
 // C#
 // TODO C# sample
@@ -44,20 +44,16 @@ await element.submit();
 ```
 
 
-## Description
-
-Returns the visible text for the element.
-
 
 ## Client Docs
 
-* [Java](https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/WebElement.html#getText--)
-* [Python](http://selenium-python.readthedocs.io/api.html)
-* [Javascript (WebdriverIO)](http://webdriver.io/api/property/getText.html)
-* [Javascript (WD)](https://github.com/admc/wd/blob/master/lib/commands.js#L1832)
-* [Ruby](http://www.rubydoc.info/gems/selenium-webdriver/Selenium/WebDriver/)
-* [PHP](https://github.com/appium/php-client/)
-* [C#](https://github.com/appium/appium-dotnet-driver/)
+ * [Java](https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/WebElement.html#getRect--) 
+
+ * [Javascript (WebdriverIO)](http://webdriver.io/api/protocol/elementIdRect.html) 
+
+
+ * [PHP](https://github.com/appium/php-client/) 
+ * [C#](https://github.com/appium/appium-dotnet-driver/) 
 
 ## Support
 
@@ -88,11 +84,14 @@ Returns the visible text for the element.
 
 ### Endpoint
 
-`GET /wd/hub/session/:session_id/element/:element_id/text`
+`GET /wd/hub/session/:session_id/elements/:element_id/rect`
 
 ### URL Parameters
 
-None
+|name|description|
+|----|-----------|
+|session_id|ID of the session to route the command to|
+|element_id|ID of the element to get the rect of|
 
 ### JSON Parameters
 
@@ -100,9 +99,13 @@ None
 
 ### Response
 
-null
+|name|type|description|
+|----|----|-----------|
+| x | number | X coordinate |
+| y | number | Y coordinate |
+| height | number | Height of the bounding rectangle |
+| weight | number | Width of the bounding rectangle |
 
 ## See Also
 
-* [W3C Specification](https://www.w3.org/TR/webdriver/#dfn-get-element-text)
-* [JSONWP Specification](https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol#sessionsessionidelementidtext)
+* [W3C Specification](https://www.w3.org/TR/webdriver/#dfn-get-element-rect)

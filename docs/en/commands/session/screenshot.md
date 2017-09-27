@@ -1,41 +1,44 @@
-# Find Element
+# Take Screenshot
 
-Search for an element
+Take a screenshot of the current viewport/window/page
 ## Example Usage
 
 ```java
 // Java
-MobileElement elementOne = (MobileElement) driver.findElementByAccessibilityId("SomeAccessibilityID");
-MobileElement elementTwo = (MobileElement) driver.findElementByClassName("SomeClassName");
+File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 
 ```
+
 ```python
 # Python
-el = self.driver.find_element_by_accessibility_id('SomeAccessibilityID')
+screenshotBase64 = self.driver.get_screenshot_as_base64()
 
 ```
+
 ```javascript
 // Javascript
 // webdriver.io example
-driver.element("~SomeAccessibilityId");
+let screenshot = driver.screenshot();
 
 
 
 // wd example
-let elementOne = await driver.elementByAccessibilityId("SomeAccessibilityID");
-let elementTwo = await driver.element("id", "SomeID");
+let screenshot = await driver.takeScreenshot();
 
 ```
+
 ```ruby
 # Ruby
-@driver.find_element(:accessibility_id, 'SomeAccessibilityID')
+@driver.screenshot_as(:base64)
 
 ```
+
 ```php
 # PHP
 // TODO PHP sample
 
 ```
+
 ```csharp
 // C#
 // TODO C# sample
@@ -43,20 +46,16 @@ let elementTwo = await driver.element("id", "SomeID");
 ```
 
 
-## Description
-
-The locator strategy returns the first element it finds. #TODO: Let's make a document with the locator strategies that this links to
-
 
 ## Client Docs
 
-* [Java](https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/WebElement.html#findElement-org.openqa.selenium.By-)
-* [Python](http://selenium-python.readthedocs.io/api.html#selenium.webdriver.remote.webdriver.WebDriver.find_element)
-* [Javascript (WebdriverIO)](http://webdriver.io/api/protocol/element.html#Usage)
-* [Javascript (WD)](https://github.com/admc/wd/blob/master/lib/commands.js#L745)
-* [Ruby](http://www.rubydoc.info/gems/selenium-webdriver/Selenium/WebDriver/)
-* [PHP](https://github.com/appium/php-client/)
-* [C#](https://github.com/appium/appium-dotnet-driver/)
+ * [Java](https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/remote/RemoteWebDriver.html#getScreenshotAs-org.openqa.selenium.OutputType-) 
+ * [Python](http://selenium-python.readthedocs.io/api.html#selenium.webdriver.remote.webdriver.WebDriver.get_screenshot_as_base64) 
+ * [Javascript (WebdriverIO)](http://webdriver.io/api/protocol/screenshot.html) 
+ * [Javascript (WD)](https://github.com/admc/wd/blob/master/lib/commands.js#L1089) 
+ * [Ruby](http://www.rubydoc.info/gems/selenium-webdriver/Selenium/WebDriver/DriverExtensions/TakesScreenshot) 
+ * [PHP](https://github.com/appium/php-client/) 
+ * [C#](https://github.com/appium/appium-dotnet-driver/) 
 
 ## Support
 
@@ -87,7 +86,7 @@ The locator strategy returns the first element it finds. #TODO: Let's make a doc
 
 ### Endpoint
 
-`POST /wd/hub/session/:session_id/element`
+`GET /wd/hub/session/:session_id/screenshot`
 
 ### URL Parameters
 
@@ -97,16 +96,13 @@ The locator strategy returns the first element it finds. #TODO: Let's make a doc
 
 ### JSON Parameters
 
-|name|type|description|
-|----|-----------|
-| using | string | The locator strategy to use |
-| value | string | The search target |
+None
 
 ### Response
 
-null
+The screenshot as a base64 encoded PNG (string)
 
 ## See Also
 
-* [W3C Specification](https://www.w3.org/TR/webdriver/#find-element)
-* [JSONWP Specification](https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol#sessionsessionidelement)
+* [W3C Specification](https://www.w3.org/TR/webdriver/#dfn-take-screenshot)
+* [JSONWP Specification](https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol#sessionsessionidscreenshot)

@@ -1,42 +1,44 @@
-# Get Element Text
+# Delete Session
 
-Returns visible text for element
+Delete the session
 ## Example Usage
 
 ```java
 // Java
-MobileElement element = (MobileElement) driver.findElementByClassName("SomeClassName");
-let elText = element.getText();
+driver.quit();
 
 ```
+
 ```python
 # Python
-# el = self.driver.find_element_by_accessibility_id('SomeId')
-# TODO: Python example
+self.driver.quit()
 
 ```
+
 ```javascript
 // Javascript
 // webdriver.io example
-driver.getText("~SomeAccessibilityId");
+driver.end();
 
 
 
 // wd example
-let element = await driver.elementByAccessibilityId("SomeAccessibilityID");
-await element.submit();
+await driver.quit();
 
 ```
+
 ```ruby
 # Ruby
-# TODO Ruby sample
+@driver.quit();
 
 ```
+
 ```php
 # PHP
 // TODO PHP sample
 
 ```
+
 ```csharp
 // C#
 // TODO C# sample
@@ -44,20 +46,16 @@ await element.submit();
 ```
 
 
-## Description
-
-Returns the visible text for the element.
-
 
 ## Client Docs
 
-* [Java](https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/WebElement.html#getText--)
-* [Python](http://selenium-python.readthedocs.io/api.html)
-* [Javascript (WebdriverIO)](http://webdriver.io/api/property/getText.html)
-* [Javascript (WD)](https://github.com/admc/wd/blob/master/lib/commands.js#L1832)
-* [Ruby](http://www.rubydoc.info/gems/selenium-webdriver/Selenium/WebDriver/)
-* [PHP](https://github.com/appium/php-client/)
-* [C#](https://github.com/appium/appium-dotnet-driver/)
+ * [Java](https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/remote/RemoteWebDriver.html#quit--) 
+ * [Python](http://selenium-python.readthedocs.io/api.html#selenium.webdriver.remote.webdriver.WebDriver.quit) 
+ * [Javascript (WebdriverIO)](http://webdriver.io/api/utility/end.html) 
+ * [Javascript (WD)](https://github.com/admc/wd/blob/master/lib/commands.js#L470) 
+ * [Ruby](http://www.rubydoc.info/gems/selenium-webdriver/Selenium/WebDriver/Driver:quit) 
+ * [PHP](https://github.com/appium/php-client/) 
+ * [C#](https://github.com/appium/appium-dotnet-driver/) 
 
 ## Support
 
@@ -88,11 +86,13 @@ Returns the visible text for the element.
 
 ### Endpoint
 
-`GET /wd/hub/session/:session_id/element/:element_id/text`
+`DELETE /session/:session_id`
 
 ### URL Parameters
 
-None
+|name|description|
+|----|-----------|
+|session_id|ID of the session to delete|
 
 ### JSON Parameters
 
@@ -104,5 +104,5 @@ null
 
 ## See Also
 
-* [W3C Specification](https://www.w3.org/TR/webdriver/#dfn-get-element-text)
-* [JSONWP Specification](https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol#sessionsessionidelementidtext)
+* [W3C Specification](https://www.w3.org/TR/webdriver/#dfn-delete-session)
+* [JSONWP Specification](https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol#sessionsessionid)

@@ -19,6 +19,7 @@ element = driver.switch_to.active_element
 driver.elementActive();
 
 
+
 // wd example
 let element = await driver.active();
 
