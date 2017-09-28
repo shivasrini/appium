@@ -1,40 +1,62 @@
-# Find Element
+# Touch Down
 
-Search for an element
+Finger down on the screen
 ## Example Usage
 
 ```java
 // Java
-MobileElement elementOne = (MobileElement) driver.findElementByAccessibilityId("SomeAccessibilityID");
-MobileElement elementTwo = (MobileElement) driver.findElementByClassName("SomeClassName");
+TouchActions action = new TouchActions(driver);
+action.down(10, 10);
+action.move(50, 50);
+action.perform();
 
 ```
+
 ```python
 # Python
-el = self.driver.find_element_by_accessibility_id('SomeAccessibilityID')
+actions = TouchActions(driver)
+actions.tap_and_hold(element)
+actions.move(50, 50)
+actions.perform()
 
 ```
+
 ```javascript
 // Javascript
 // webdriver.io example
-driver.element("~SomeAccessibilityId");
+driver.touchMultiPerform([
+  { action: 'press', options: { x: 100, y: 250 }},
+  { action: 'moveTo', options: { x: 300, y: 100 }},
+  { action: 'release' }
+]);
+
 
 
 // wd example
-let elementOne = await driver.elementByAccessibilityId("SomeAccessibilityID");
-let elementTwo = await driver.element("id", "SomeID");
+// Using tapElement method
+await driver.tapElement(elementOne);
+
+// Using touch actions
+let action = new wd.TouchAction();
+action.press({x: 10, y: 10});
+action.moveTo({x: 50, y: 50});
+action.perform();
+await driver.performTouchAction(action);
 
 ```
+
 ```ruby
 # Ruby
-@driver.find_element(:accessibility_id, 'SomeAccessibilityID')
+@driver.touch_action.down(element).move().perform
 
 ```
+
 ```php
 # PHP
 // TODO PHP sample
 
 ```
+
 ```csharp
 // C#
 // TODO C# sample
@@ -42,20 +64,16 @@ let elementTwo = await driver.element("id", "SomeID");
 ```
 
 
-## Description
-
-The locator strategy returns the first element it finds. #TODO: Let's make a document with the locator strategies that this links to
-
 
 ## Client Docs
 
-* [Java](https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/WebElement.html#findElement-org.openqa.selenium.By-)
-* [Python](http://selenium-python.readthedocs.io/api.html#selenium.webdriver.remote.webdriver.WebDriver.find_element)
-* [Javascript (WebdriverIO)](http://webdriver.io/api/protocol/element.html#Usage)
-* [Javascript (WD)](https://github.com/admc/wd/blob/master/lib/commands.js#L745)
-* [Ruby](http://www.rubydoc.info/gems/selenium-webdriver/Selenium/WebDriver/)
-* [PHP](https://github.com/appium/php-client/)
-* [C#](https://github.com/appium/appium-dotnet-driver/)
+ * [Java](https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/interactions/touch/TouchActions.html#down-int-int-) 
+ * [Python](https://seleniumhq.github.io/selenium/docs/api/py/webdriver/selenium.webdriver.common.touch_actions.html#selenium.webdriver.common.touch_actions.TouchActions.tap_and_hold) 
+ * [Javascript (WebdriverIO)](http://webdriver.io/api/mobile/touchMultiPerform.html) 
+ * [Javascript (WD)](https://github.com/admc/wd/blob/master/lib/commands.js#L1546) 
+ * [Ruby](http://www.rubydoc.info/gems/selenium-webdriver/Selenium/WebDriver/TouchActionBuilder#down-instance_method) 
+ * [PHP](https://github.com/appium/php-client/) 
+ * [C#](https://github.com/appium/appium-dotnet-driver/) 
 
 ## Support
 
@@ -86,7 +104,7 @@ The locator strategy returns the first element it finds. #TODO: Let's make a doc
 
 ### Endpoint
 
-`POST /wd/hub/session/:session_id/element`
+`POST /session/:session_id/touch/down`
 
 ### URL Parameters
 
@@ -98,8 +116,8 @@ The locator strategy returns the first element it finds. #TODO: Let's make a doc
 
 |name|type|description|
 |----|----|-----------|
-| using | string | The locator strategy to use |
-| value | string | The search target |
+| x | number | X coordinate on the screen |
+| y | number | Y coordinate on the screen |
 
 ### Response
 
@@ -107,5 +125,4 @@ null
 
 ## See Also
 
-* [W3C Specification](https://www.w3.org/TR/webdriver/#find-element)
-* [JSONWP Specification](https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol#sessionsessionidelement)
+* [JSONWP Specification](https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol#sessionsessionidtouchdown)
