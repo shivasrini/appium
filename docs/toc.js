@@ -17,8 +17,6 @@ module.exports = {
       ["UIAutomation (iOS)", "ios-uiautomation.md"]]],
     ["Commands", ["commands",
       ["Status", "status.md"],
-<<<<<<< HEAD
-=======
       ["Session", ["session",
         ["Create", "create.md"],
         ["Delete", "delete.md"],
@@ -56,7 +54,6 @@ module.exports = {
           ]],
         ]],
       ]],
->>>>>>> 8075566a... Added device interactions
       ["Element", ["element",
         ["Find Element", "find-element.md"],
         ["Find Elements", "find-elements.md"],
