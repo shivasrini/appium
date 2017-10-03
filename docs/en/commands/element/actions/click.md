@@ -54,16 +54,6 @@ Clicks element at its center point. If the element's center point is obscured by
 Not all drivers automatically scroll the element into view and may need to be scrolled to in order to interact with it.
 
 
-## Client Docs
-
- * [Java](https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/WebElement.html#click--) 
- * [Python](http://selenium-python.readthedocs.io/api.html#selenium.webdriver.remote.webelement.WebElement.click) 
- * [Javascript (WebdriverIO)](http://webdriver.io/api/action/click.html) 
- * [Javascript (WD)](https://github.com/admc/wd/blob/master/lib/commands.js#L1672) 
- * [Ruby](http://www.rubydoc.info/gems/selenium-webdriver/Selenium/WebDriver/Element#click-instance_method) 
- * [PHP](https://github.com/appium/php-client/) 
- * [C#](https://github.com/appium/appium-dotnet-driver/) 
-
 ## Support
 
 ### Appium Server
@@ -79,15 +69,15 @@ Not all drivers automatically scroll the element into view and may need to be sc
 
 ### Appium Clients 
 
-|Language|Support|
-|--------|-------|
-|[Java](https://github.com/appium/java-client/releases/latest)| All |
-|[Python](https://github.com/appium/python-client/releases/latest)| All |
-|[Javascript (WebdriverIO)](http://webdriver.io/index.html)| All |
-|[Javascript (WD)](https://github.com/admc/wd/releases/latest)| All |
-|[Ruby](https://github.com/appium/ruby_lib/releases/latest)| All |
-|[PHP](https://github.com/appium/php-client/releases/latest)| All |
-|[C#](https://github.com/appium/appium-dotnet-driver/releases/latest)| All |
+|Language|Support|Documentation|
+|--------|-------|-------------|
+|[Java](https://github.com/appium/java-client/releases/latest)| All |  [seleniumhq.github.io](https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/WebElement.html#click--)  |
+|[Python](https://github.com/appium/python-client/releases/latest)| All |  [selenium-python.readthedocs.io](http://selenium-python.readthedocs.io/api.html#selenium.webdriver.remote.webelement.WebElement.click)  |
+|[Javascript (WebdriverIO)](http://webdriver.io/index.html)| All |  [webdriver.io](http://webdriver.io/api/action/click.html)  |
+|[Javascript (WD)](https://github.com/admc/wd/releases/latest)| All |  [github.com](https://github.com/admc/wd/blob/master/lib/commands.js#L1672)  |
+|[Ruby](https://github.com/appium/ruby_lib/releases/latest)| All |  [www.rubydoc.info](http://www.rubydoc.info/gems/selenium-webdriver/Selenium/WebDriver/Element#click-instance_method)  |
+|[PHP](https://github.com/appium/php-client/releases/latest)| All |  [github.com](https://github.com/appium/php-client/)  |
+|[C#](https://github.com/appium/appium-dotnet-driver/releases/latest)| All |  [github.com](https://github.com/appium/appium-dotnet-driver/)  |
 
 ## HTTP API Specifications
 

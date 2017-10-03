@@ -52,16 +52,6 @@ await driver.status();
 An indepth description of what this command does
 
 
-## Client Docs
-
- * [Java](https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/WebElement.html#click--) 
- * [Python](https://github.com/appium/python-client) 
- * [Javascript (WebdriverIO)](http://webdriver.io/index.html) 
- * [Javascript (WD)](https://github.com/admc/wd/releases) 
- * [Ruby](https://github.com/appium/ruby_lib/releases/latest) 
- * [PHP](https://github.com/appium/php-client/releases/latest-) 
- * [C#](https://github.com/appium/appium) 
-
 ## Support
 
 ### Appium Server
@@ -76,15 +66,15 @@ An indepth description of what this command does
 
 ### Appium Clients 
 
-|Language|Support|
-|--------|-------|
-|[Java](https://github.com/appium/java-client/releases/latest)| All |
-|[Python](https://github.com/appium/python-client/releases/latest)| All |
-|[Javascript (WebdriverIO)](http://webdriver.io/index.html)| None |
-|[Javascript (WD)](https://github.com/admc/wd/releases/latest)| None |
-|[Ruby](https://github.com/appium/ruby_lib/releases/latest)| All |
-|[PHP](https://github.com/appium/php-client/releases/latest)| None |
-|[C#](https://github.com/appium/appium-dotnet-driver/releases/latest)| None |
+|Language|Support|Documentation|
+|--------|-------|-------------|
+|[Java](https://github.com/appium/java-client/releases/latest)| All |  [seleniumhq.github.io](https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/WebElement.html#click--)  |
+|[Python](https://github.com/appium/python-client/releases/latest)| All |  [github.com](https://github.com/appium/python-client)  |
+|[Javascript (WebdriverIO)](http://webdriver.io/index.html)| None |  [webdriver.io](http://webdriver.io/index.html)  |
+|[Javascript (WD)](https://github.com/admc/wd/releases/latest)| None |  [github.com](https://github.com/admc/wd/releases)  |
+|[Ruby](https://github.com/appium/ruby_lib/releases/latest)| All |  [github.com](https://github.com/appium/ruby_lib/releases/latest)  |
+|[PHP](https://github.com/appium/php-client/releases/latest)| None |  [github.com](https://github.com/appium/php-client/releases/latest-)  |
+|[C#](https://github.com/appium/appium-dotnet-driver/releases/latest)| None |  [github.com](https://github.com/appium/appium)  |
 
 ## HTTP API Specifications
 

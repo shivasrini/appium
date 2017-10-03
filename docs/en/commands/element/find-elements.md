@@ -59,16 +59,6 @@ let elementsTwo = await driver.elements("id", "SomeID");
 Get a list of elements that match the [locator selector](/docs/en/about-appium/getting-started).
 
 
-## Client Docs
-
- * [Java](https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/WebElement.html#findElements-org.openqa.selenium.By-) 
- * [Python](http://selenium-python.readthedocs.io/api.html#selenium.webdriver.remote.webdriver.WebDriver.find_elements) 
- * [Javascript (WebdriverIO)](http://webdriver.io/api/protocol/elements.html#Usage) 
- * [Javascript (WD)](https://github.com/admc/wd/blob/master/lib/commands.js#L798) 
- * [Ruby](http://www.rubydoc.info/gems/selenium-webdriver/Selenium/WebDriver/SearchContext:find_elements) 
- * [PHP](https://github.com/appium/php-client/) 
- * [C#](https://github.com/appium/appium-dotnet-driver/) 
-
 ## Support
 
 ### Appium Server
@@ -84,15 +74,15 @@ Get a list of elements that match the [locator selector](/docs/en/about-appium/g
 
 ### Appium Clients 
 
-|Language|Support|
-|--------|-------|
-|[Java](https://github.com/appium/java-client/releases/latest)| All |
-|[Python](https://github.com/appium/python-client/releases/latest)| All |
-|[Javascript (WebdriverIO)](http://webdriver.io/index.html)| All |
-|[Javascript (WD)](https://github.com/admc/wd/releases/latest)| All |
-|[Ruby](https://github.com/appium/ruby_lib/releases/latest)| All |
-|[PHP](https://github.com/appium/php-client/releases/latest)| All |
-|[C#](https://github.com/appium/appium-dotnet-driver/releases/latest)| All |
+|Language|Support|Documentation|
+|--------|-------|-------------|
+|[Java](https://github.com/appium/java-client/releases/latest)| All |  [seleniumhq.github.io](https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/WebElement.html#findElements-org.openqa.selenium.By-)  |
+|[Python](https://github.com/appium/python-client/releases/latest)| All |  [selenium-python.readthedocs.io](http://selenium-python.readthedocs.io/api.html#selenium.webdriver.remote.webdriver.WebDriver.find_elements)  |
+|[Javascript (WebdriverIO)](http://webdriver.io/index.html)| All |  [webdriver.io](http://webdriver.io/api/protocol/elements.html#Usage)  |
+|[Javascript (WD)](https://github.com/admc/wd/releases/latest)| All |  [github.com](https://github.com/admc/wd/blob/master/lib/commands.js#L798)  |
+|[Ruby](https://github.com/appium/ruby_lib/releases/latest)| All |  [www.rubydoc.info](http://www.rubydoc.info/gems/selenium-webdriver/Selenium/WebDriver/SearchContext:find_elements)  |
+|[PHP](https://github.com/appium/php-client/releases/latest)| All |  [github.com](https://github.com/appium/php-client/)  |
+|[C#](https://github.com/appium/appium-dotnet-driver/releases/latest)| All |  [github.com](https://github.com/appium/appium-dotnet-driver/)  |
 
 ## HTTP API Specifications
 

@@ -51,16 +51,6 @@ let isEqual = await elementOne.equalsElement(elementTwo);
 
 
 
-## Client Docs
-
- * [Java](https://appium.github.io/java-client/io/appium/java_client/MobileElement.html) 
- * [Python](http://selenium-python.readthedocs.io/api.html) 
- * [Javascript (WebdriverIO)](http://webdriver.io/api/state/isEnabled.html) 
- * [Javascript (WD)](https://github.com/admc/wd/blob/master/lib/commands.js#L1463) 
- * [Ruby](http://www.rubydoc.info/gems/selenium-webdriver/Selenium/WebDriver/Element#enabled%3F-instance_method) 
- * [PHP](https://github.com/appium/php-client/) 
- * [C#](https://github.com/appium/appium-dotnet-driver/) 
-
 ## Support
 
 ### Appium Server
@@ -76,15 +66,15 @@ let isEqual = await elementOne.equalsElement(elementTwo);
 
 ### Appium Clients 
 
-|Language|Support|
-|--------|-------|
-|[Java](https://github.com/appium/java-client/releases/latest)| All |
-|[Python](https://github.com/appium/python-client/releases/latest)| All |
-|[Javascript (WebdriverIO)](http://webdriver.io/index.html)| All |
-|[Javascript (WD)](https://github.com/admc/wd/releases/latest)| All |
-|[Ruby](https://github.com/appium/ruby_lib/releases/latest)| All |
-|[PHP](https://github.com/appium/php-client/releases/latest)| All |
-|[C#](https://github.com/appium/appium-dotnet-driver/releases/latest)| All |
+|Language|Support|Documentation|
+|--------|-------|-------------|
+|[Java](https://github.com/appium/java-client/releases/latest)| All |  [appium.github.io](https://appium.github.io/java-client/io/appium/java_client/MobileElement.html)  |
+|[Python](https://github.com/appium/python-client/releases/latest)| All |  [selenium-python.readthedocs.io](http://selenium-python.readthedocs.io/api.html)  |
+|[Javascript (WebdriverIO)](http://webdriver.io/index.html)| All |  [webdriver.io](http://webdriver.io/api/state/isEnabled.html)  |
+|[Javascript (WD)](https://github.com/admc/wd/releases/latest)| All |  [github.com](https://github.com/admc/wd/blob/master/lib/commands.js#L1463)  |
+|[Ruby](https://github.com/appium/ruby_lib/releases/latest)| All |  [www.rubydoc.info](http://www.rubydoc.info/gems/selenium-webdriver/Selenium/WebDriver/Element#enabled%3F-instance_method)  |
+|[PHP](https://github.com/appium/php-client/releases/latest)| All |  [github.com](https://github.com/appium/php-client/)  |
+|[C#](https://github.com/appium/appium-dotnet-driver/releases/latest)| All |  [github.com](https://github.com/appium/appium-dotnet-driver/)  |
 
 ## HTTP API Specifications
 
